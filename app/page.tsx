@@ -1,5 +1,9 @@
 import styles from "./page.module.scss";
 
 export default function Home() {
-  return <h1 className={styles.header}>Guess the Link</h1>;
+  return (
+    <main>
+      <h3>Home</h3>
+    </main>
+  );
 }
