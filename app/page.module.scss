@@ -1,4 +1,53 @@
-.header {
-  text-align: center;
-  font-weight: 700;
+@import "variables";
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 1em 1em;
+  justify-content: center;
+  align-content: center;
+  justify-items: stretch;
+  align-items: stretch;
+  grid-template-areas:
+    "Play Play"
+    "Categories Categories"
+    "Settings Friends";
+
+  .item {
+    overflow: hidden;
+    height: 7rem;
+    color: $white;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    border-radius: 2px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .play {
+    grid-area: Play;
+    background-color: $primary;
+  }
+
+  .categories {
+    grid-area: Categories;
+    background-color: #c84630;
+  }
+
+  .friends {
+    height: 5rem;
+    grid-area: Friends;
+    background-color: #ffa5a5;
+  }
+
+  .settings {
+    height: 5rem;
+    grid-area: Settings;
+    background-color: $secondary;
+  }
 }

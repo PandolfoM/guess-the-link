@@ -2,13 +2,13 @@ import styles from "./button.module.scss";
 import React, { MouseEventHandler } from "react";
 import { StyledIcon } from "@styled-icons/styled-icon";
 
-type Props = {
+interface Props {
   text?: String;
   icon?: StyledIcon;
   size?: number | string;
   title?: string;
   onClick: MouseEventHandler;
-};
+}
 
 export default function Button(props: Props) {
   return (
