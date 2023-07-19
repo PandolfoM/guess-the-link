@@ -1,0 +1,24 @@
+@import "../../variables";
+
+.footer {
+  height: fit-content;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  width: 100%;
+  padding: 1rem;
+
+  h6 {
+    margin: 0;
+    font-weight: 500;
+    font-size: $fontSizeFooter;
+  }
+
+  p {
+    margin: 0.5rem;
+    font-weight: 100;
+    font-size: $fontSizeFooter;
+  }
+}

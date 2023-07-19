@@ -4,6 +4,13 @@
   box-sizing: border-box;
 }
 
+::selection {
+  background: $primary; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: $primary; /* Gecko Browsers */
+}
+
 html,
 body {
   background-color: $background;
@@ -86,6 +93,7 @@ pre {
 
 a {
   background-color: transparent;
+  color: inherit;
 }
 
 /**
