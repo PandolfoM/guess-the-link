@@ -4,23 +4,9 @@ import { StyledIcon } from "@styled-icons/styled-icon";
 
 interface Props {
   text?: String;
-  icon?: StyledIcon;
-  size?: number | string;
-  title?: string;
-  onClick: MouseEventHandler;
+  onClick?: MouseEventHandler;
 }
 
 export default function Button(props: Props) {
-  return (
-    <>
-      {props.text && <button onClick={props.onClick}>{props.text}</button>}
-      {props.icon && (
-        <props.icon
-          onClick={props.onClick}
-          size={props.size}
-          title={props.title}
-        />
-      )}
-    </>
-  );
+  return <a onClick={props.onClick}>{props.text}</a>;
 }
