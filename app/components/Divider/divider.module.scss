@@ -1,0 +1,10 @@
+@import "../../variables";
+
+.divider {
+  background-color: $white;
+}
+
+.divider[data-orientation="horizontal"] {
+  height: 1px;
+  margin: 0.5rem auto;
+}

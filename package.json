@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/react-separator": "^1.0.3",
     "@styled-icons/feather": "^10.47.0",
     "@types/node": "20.4.2",
     "@types/react": "18.2.15",
