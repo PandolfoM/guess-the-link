@@ -2,12 +2,14 @@
 
 import Button from "./components/Button";
 import Icon from "./components/Icon";
+import PlayerCard from "./components/PlayerCard";
 import styles from "./page.module.scss";
 import { HelpCircle, Sliders, Users } from "@styled-icons/feather";
 
 export default function Home() {
   return (
     <main>
+      <PlayerCard />
       <div className={styles.wrapper}>
         <div className={`${styles.item} ${styles.play}`}>
           <Button text="Play" />

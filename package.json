@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/react-avatar": "^1.0.3",
     "@radix-ui/react-separator": "^1.0.3",
     "@styled-icons/feather": "^10.47.0",
     "@types/node": "20.4.2",
