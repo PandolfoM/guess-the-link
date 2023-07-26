@@ -9,7 +9,7 @@ export default function Nav() {
   return (
     <nav className={styles.nav}>
       <h3>Guess the Link</h3>
-      <Icon icon={Menu} title="Menu" style={{ cursor: "pointer" }} />
+      {/* <Icon icon={Menu} title="Menu" style={{ cursor: "pointer" }} /> */}
     </nav>
   );
 }

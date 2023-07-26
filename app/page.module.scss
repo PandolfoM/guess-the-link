@@ -28,7 +28,7 @@
     border-radius: 5px;
     font-weight: bold;
     cursor: pointer;
-    text-shadow: #00000040 2px 2px 0px;
+    text-shadow: $textShadow;
     background: color-mix(in srgb, $secondary 10%, transparent);
   }
 
