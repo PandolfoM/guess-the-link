@@ -1,15 +1,22 @@
 @import "../../variables";
 
 .nav {
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   margin-bottom: 1rem;
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+
+.nav_default {
+  justify-content: center;
 
   h3 {
     font-size: 2rem;
     letter-spacing: 2px;
     text-shadow: $textShadow;
   }
+}
+
+.nav_route {
+  justify-content: flex-start;
 }

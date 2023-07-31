@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import Button from "./components/Button";
 import Icon from "./components/Icon";
 import PlayerCard from "./components/PlayerCard";
@@ -12,10 +13,10 @@ export default function Home() {
       <PlayerCard />
       <div className={styles.wrapper}>
         <div className={`${styles.item} ${styles.play}`}>
-          <Button text="Play" />
+          <Button text="Play" href={"/"} />
         </div>
         <div className={`${styles.item} ${styles.modes}`}>
-          <Button text="Modes" />
+          <Button text="Modes" href={"/modes"} />
         </div>
         <a className={`${styles.item} ${styles.friends}`}>
           <Icon icon={Users} title="Friends" />
