@@ -13,7 +13,8 @@ type Props = {
 type IconProps = {
   kind: "icon";
   icon: StyledIcon;
-  iconTitle: string;
+  title: string;
+  size?: number;
 };
 
 type TextProps = {
@@ -34,7 +35,7 @@ export default function Button(props: Props) {
       href={props.href}
       target={props.newTab ? "_blank" : "_self"}>
       {props.kind === "icon" ? (
-        <Icon icon={props.icon} title={props.iconTitle} />
+        <Icon icon={props.icon} title={props.title} size={props.size} />
       ) : (
         <>{props.text}</>
       )}
