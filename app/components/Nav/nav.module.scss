@@ -3,6 +3,7 @@
 .nav {
   margin-bottom: 1rem;
   display: flex;
+  flex-direction: column;
   text-align: center;
   align-items: center;
   justify-content: center;
@@ -11,5 +12,17 @@
     font-size: 2rem;
     letter-spacing: 2px;
     text-shadow: $textShadow;
+  }
+
+  div {
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+    line-height: 1rem;
+
+    h4 {
+      font-size: 1.5rem;
+      margin: 1rem 0;
+    }
   }
 }
