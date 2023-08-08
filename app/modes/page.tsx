@@ -18,9 +18,21 @@ export default function Modes() {
         <h3>MODES</h3>
       </nav>
       <div className={styles.wrapper}>
-        <Button text="Casual" href={"/modes"} />
-        <Button text="Competitive" href={"/modes"} />
-        <Button text="Daily Challenge" href={"/modes"} />
+        <Button
+          text="Casual"
+          href={"/modes"}
+          style={{ background: "#68b685" }}
+        />
+        <Button
+          text="Competitive"
+          href={"/modes"}
+          style={{ background: "#decc57" }}
+        />
+        <Button
+          text="Daily Challenge"
+          href={"/modes"}
+          style={{ background: "#b66868" }}
+        />
       </div>
     </>
   );
