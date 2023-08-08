@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./footer.module.scss";
-import Button from "../Button";
+import Button from "../Button/Button";
 import Divider from "../Divider";
 
 export default function Footer() {

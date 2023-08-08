@@ -14,7 +14,7 @@
     "Categories Categories Categories"
     "Settings Friends Help";
 
-  .item {
+  a {
     overflow: hidden;
     height: 7rem;
     color: $white;
@@ -30,29 +30,29 @@
     cursor: pointer;
     text-shadow: $textShadow;
     background: color-mix(in srgb, $secondary 10%, transparent);
-  }
 
-  .play {
-    grid-area: Play;
-    background: $primary;
-  }
+    &[aria-label="play"] {
+      grid-area: Play;
+      background: $primary;
+    }
 
-  .modes {
-    grid-area: Categories;
-  }
+    &[aria-label="modes"] {
+      grid-area: Categories;
+    }
 
-  .friends {
-    height: 5rem;
-    grid-area: Friends;
-  }
+    &[aria-label="friends"] {
+      height: 5rem;
+      grid-area: Friends;
+    }
 
-  .settings {
-    height: 5rem;
-    grid-area: Settings;
-  }
+    &[aria-label="settings"] {
+      height: 5rem;
+      grid-area: Settings;
+    }
 
-  .help {
-    height: 5rem;
-    grid-area: Help;
+    &[aria-label="help"] {
+      height: 5rem;
+      grid-area: Help;
+    }
   }
 }

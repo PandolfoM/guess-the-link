@@ -1,0 +1,14 @@
+@import "../variables";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: center;
+
+  a {
+    background: color-mix(in srgb, $secondary 10%, transparent);
+    height: 7rem;
+    font-size: 38px;
+  }
+}

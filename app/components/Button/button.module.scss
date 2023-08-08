@@ -1,0 +1,17 @@
+@import "../../variables";
+
+.container {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  text-shadow: $textShadow;
+  border-radius: 5px;
+  overflow: hidden;
+  font-weight: bold;
+  letter-spacing: 2px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  white-space: nowrap;
+}

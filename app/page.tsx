@@ -1,8 +1,6 @@
 "use client";
 
-import Link from "next/link";
-import Button from "./components/Button";
-import Icon from "./components/Icon";
+import Button from "./components/Button/Button";
 import PlayerCard from "./components/PlayerCard";
 import styles from "./page.module.scss";
 import { HelpCircle, Sliders, Users } from "@styled-icons/feather";
@@ -12,21 +10,29 @@ export default function Home() {
     <main>
       <PlayerCard />
       <div className={styles.wrapper}>
-        <div className={`${styles.item} ${styles.play}`}>
-          <Button text="Play" href={"/"} />
-        </div>
-        <div className={`${styles.item} ${styles.modes}`}>
-          <Button text="Modes" href={"/modes"} />
-        </div>
-        <a className={`${styles.item} ${styles.friends}`}>
-          <Icon icon={Users} title="Friends" />
-        </a>
-        <a className={`${styles.item} ${styles.settings}`}>
-          <Icon icon={Sliders} title="Settings" />
-        </a>
-        <a className={`${styles.item} ${styles.help}`}>
-          <Icon icon={HelpCircle} title="Help" />
-        </a>
+        <Button text="Play" href={"/play"} label="play" />
+        <Button text="Modes" href={"/modes"} label="modes" />
+        <Button
+          kind="icon"
+          icon={Users}
+          title="Friends"
+          href={"/friends"}
+          label="friends"
+        />
+        <Button
+          kind="icon"
+          icon={Sliders}
+          title="Settings"
+          href="/settings"
+          label="settings"
+        />
+        <Button
+          kind="icon"
+          icon={HelpCircle}
+          title="Help"
+          href="/help"
+          label="help"
+        />
       </div>
     </main>
   );
