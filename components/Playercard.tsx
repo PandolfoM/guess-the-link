@@ -28,9 +28,10 @@ const styles = StyleSheet.create({
     padding: 12,
     overflow: "hidden",
     flexWrap: "wrap",
+    flexDirection: "row",
   },
   playerInfo: {
-    overflow: "hidden",
+    flex: 1,
   },
   name: {
     fontWeight: "700",
