@@ -8,7 +8,7 @@ export default function Playercard() {
         source={{ uri: "https://avatars.githubusercontent.com/u/32248293?v=4" }}
       />
       <View style={styles.playerInfo}>
-        <Text style={[styles.text, styles.name]} numberOfLines={1}>Matthew Pandolfoasd asdhadghjahjdgashdghjag das dashdahsj</Text>
+        <Text style={[styles.text, styles.name]} numberOfLines={1}>Matthew Pandolfo</Text>
         <Text style={styles.text}>Games Won: 69</Text>
         <Text style={styles.text}>Puzzle Pieces: 420</Text>
       </View>
