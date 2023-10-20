@@ -1,9 +1,13 @@
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { FontAwesome5 } from "@expo/vector-icons";
+import Playercard from "./components/Playercard";
 
 export default function App() {
   return (
     <View style={styles.wrapper}>
+      <View style={styles.gridRow}>
+        <Playercard />
+      </View>
       <View style={styles.gridRow}>
         <TouchableOpacity style={[styles.gridCellPlay, styles.button]}>
           <Text style={styles.text}>Play</Text>
@@ -39,7 +43,7 @@ const styles = StyleSheet.create({
   },
   button: {
     overflow: "hidden",
-    height: 84,
+    height: 144,
     textAlign: "center",
     display: "flex",
     justifyContent: "center",
@@ -63,21 +67,21 @@ const styles = StyleSheet.create({
   gridCellCategories: {
     flex: 1,
     margin: 4,
-    backgroundColor: "#96adc8",
+    backgroundColor: "rgba(150, 173, 200, 0.5)",
   },
   gridCellSettings: {
     flex: 1,
     margin: 4,
-    backgroundColor: "#96adc8",
+    backgroundColor: "rgba(150, 173, 200, 0.5)",
   },
   gridCellFriends: {
     flex: 1,
     margin: 4,
-    backgroundColor: "#96adc8",
+    backgroundColor: "rgba(150, 173, 200, 0.5)",
   },
   gridCellHelp: {
     flex: 1,
     margin: 4,
-    backgroundColor: "#96adc8",
+    backgroundColor: "rgba(150, 173, 200, 0.5)",
   },
 });
