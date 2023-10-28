@@ -1,5 +1,6 @@
 import { StyleSheet, View, Text } from "react-native";
 import { Avatar } from "react-native-paper";
+import colors from "../config/colors";
 
 export default function Playercard() {
   return (
@@ -8,7 +9,9 @@ export default function Playercard() {
         source={{ uri: "https://avatars.githubusercontent.com/u/32248293?v=4" }}
       />
       <View style={styles.playerInfo}>
-        <Text style={[styles.text, styles.name]} numberOfLines={1}>Matthew Pandolfo</Text>
+        <Text style={[styles.text, styles.name]} numberOfLines={1}>
+          Matthew Pandolfo
+        </Text>
         <Text style={styles.text}>Games Won: 69</Text>
         <Text style={styles.text}>Puzzle Pieces: 420</Text>
       </View>
@@ -18,7 +21,7 @@ export default function Playercard() {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "rgba(150, 173, 200, 0.5)",
+    backgroundColor: colors.cardColor,
     height: 90,
     marginHorizontal: 4,
     marginBottom: 12,
@@ -38,7 +41,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
   text: {
-    color: "#fff",
+    color: colors.white,
     fontSize: 15,
   },
 });
