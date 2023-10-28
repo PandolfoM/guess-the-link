@@ -1,7 +1,6 @@
 "use client";
 
 import styles from "./modes.module.scss";
-import { ArrowLeft } from "@styled-icons/feather";
 import Button from "../components/Button/Button";
 
 export default function Modes() {
@@ -11,7 +10,7 @@ export default function Modes() {
       <Button
         text="Competitive"
         href={"/modes"}
-        style={{ background: "#decc57" }}
+        style={{ background: "#e3c251" }}
       />
       <Button
         text="Daily Challenge"

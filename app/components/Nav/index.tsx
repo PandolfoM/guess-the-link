@@ -8,13 +8,12 @@ import { ArrowLeft } from "@styled-icons/feather";
 
 export default function Nav() {
   const router = usePathname();
-  console.log(router);
 
   return (
     <>
       <nav className={styles.nav}>
         <h3>Guess the Link</h3>
-        {router !== "/" && (
+        {router !== "/" && router !== "/play" && (
           <div>
             <Button
               kind="icon"
