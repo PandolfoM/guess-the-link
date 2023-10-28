@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { StyleSheet, Text, TouchableHighlight, View } from "react-native";
 import { FontAwesome5 } from "@expo/vector-icons";
 import Playercard from "./components/Playercard";
 
@@ -9,25 +9,25 @@ export default function App() {
         <Playercard />
       </View>
       <View style={styles.gridRow}>
-        <TouchableOpacity style={[styles.gridCellPlay, styles.button]}>
+        <TouchableHighlight style={[styles.gridCellPlay, styles.button]}>
           <Text style={styles.text}>Play</Text>
-        </TouchableOpacity>
+        </TouchableHighlight>
       </View>
       <View style={styles.gridRow}>
-        <TouchableOpacity style={[styles.gridCellCategories, styles.button]}>
+        <TouchableHighlight style={[styles.gridCellCategories, styles.button]}>
           <Text style={styles.text}>Categories</Text>
-        </TouchableOpacity>
+        </TouchableHighlight>
       </View>
       <View style={styles.gridRow}>
-        <TouchableOpacity style={[styles.gridCellFriends, styles.button]}>
+        <TouchableHighlight style={[styles.gridCellFriends, styles.button]}>
           <FontAwesome5 name={"user-friends"} style={styles.text} />
-        </TouchableOpacity>
-        <TouchableOpacity style={[styles.gridCellSettings, styles.button]}>
+        </TouchableHighlight>
+        <TouchableHighlight style={[styles.gridCellSettings, styles.button]}>
           <FontAwesome5 name={"sliders-h"} style={styles.text} />
-        </TouchableOpacity>
-        <TouchableOpacity style={[styles.gridCellHelp, styles.button]}>
+        </TouchableHighlight>
+        <TouchableHighlight style={[styles.gridCellHelp, styles.button]}>
           <FontAwesome5 name={"question-circle"} style={styles.text} />
-        </TouchableOpacity>
+        </TouchableHighlight>
       </View>
     </View>
   );
