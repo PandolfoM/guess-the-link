@@ -3,14 +3,18 @@ import { StyleSheet, Text, TouchableOpacity } from "react-native";
 import colors from "../config/colors";
 import { useNavigation } from "@react-navigation/native";
 
-function BackButton() {
-  const navigation = useNavigation()
+interface Props {
+  text?: string;
+}
+
+function BackButton(props: Props) {
+  const navigation = useNavigation();
 
   return (
     <TouchableOpacity
       onPress={() => navigation.goBack()}
       style={styles.backBtnContainer}>
-      <Text style={styles.backBtn}>Back</Text>
+      <Text style={styles.backBtn}>{props.text ? props.text : "Back"}</Text>
     </TouchableOpacity>
   );
 }

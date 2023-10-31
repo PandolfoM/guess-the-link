@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from "react-native";
 import { NavigationProps } from "../App";
 import Page from "../components/Page";
 import colors from "../config/colors";
+import BackButton from "../components/BackButton";
 
 export default function Play({ navigation }: NavigationProps) {
   const [countdown, setCountdown] = useState<number>(4);
@@ -26,7 +27,7 @@ export default function Play({ navigation }: NavigationProps) {
 
   return (
     <Page>
-      {/* <BackButton/> */}
+      {countdown === 0 && <BackButton text="Quit" />}
       <View style={styles.container}>
         {countdown > 0 ? (
           <>
