@@ -23,7 +23,6 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: colors.cardColor,
     height: 90,
-    marginHorizontal: 4,
     marginBottom: 12,
     borderRadius: 5,
     flex: 1,

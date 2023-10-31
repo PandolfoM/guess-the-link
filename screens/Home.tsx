@@ -4,10 +4,11 @@ import Playercard from "../components/Playercard";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { NavigationProps } from "../App";
 import colors from "../config/colors";
+import Page from "../components/Page";
 
 export default function Home({ navigation }: NavigationProps) {
   return (
-    <View style={styles.wrapper}>
+    <Page>
       <View style={styles.gridRow}>
         <Playercard />
       </View>
@@ -34,18 +35,11 @@ export default function Home({ navigation }: NavigationProps) {
           <FontAwesome5 name={"question-circle"} style={styles.text} />
         </TouchableHighlight>
       </View>
-    </View>
+    </Page>
   );
 }
 
 const styles = StyleSheet.create({
-  wrapper: {
-    flex: 1,
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: colors.background,
-  },
   button: {
     overflow: "hidden",
     height: 144,
@@ -66,12 +60,12 @@ const styles = StyleSheet.create({
   },
   gridCellPlay: {
     flex: 1,
-    margin: 4,
+    marginVertical: 4,
     backgroundColor: colors.accentCardColor,
   },
   gridCellCategories: {
     flex: 1,
-    margin: 4,
+    marginVertical: 4,
     backgroundColor: colors.cardColor,
   },
   gridCellSettings: {
@@ -81,12 +75,14 @@ const styles = StyleSheet.create({
   },
   gridCellFriends: {
     flex: 1,
-    margin: 4,
+    marginVertical: 4,
+    marginRight: 4,
     backgroundColor: colors.cardColor,
   },
   gridCellHelp: {
     flex: 1,
-    margin: 4,
+    marginVertical: 4,
+    marginLeft: 4,
     backgroundColor: colors.cardColor,
   },
 });

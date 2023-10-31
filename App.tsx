@@ -27,7 +27,7 @@ export default function App() {
         <Stack.Screen
           name="Play"
           component={Play}
-          options={{ headerBackButtonMenuEnabled: true, headerShown: false }}
+          options={{ headerShown: false }}
         />
       </Stack.Navigator>
       <StatusBar style="auto" />
