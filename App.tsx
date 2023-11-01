@@ -5,6 +5,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import Play from "./screens/Play";
 import Home from "./screens/Home";
 import { SafeAreaProvider } from "react-native-safe-area-context";
+import colors from "./config/colors";
 
 type RootStackParamList = {
   Home: undefined;
@@ -18,7 +19,11 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
+      <Stack.Navigator
+        initialRouteName="Home"
+        screenOptions={{
+          contentStyle: { backgroundColor: colors.background },
+        }}>
         <Stack.Screen
           name="Home"
           component={Home}
@@ -27,7 +32,9 @@ export default function App() {
         <Stack.Screen
           name="Play"
           component={Play}
-          options={{ headerShown: false }}
+          options={{
+            headerShown: false,
+          }}
         />
       </Stack.Navigator>
       <StatusBar style="auto" />

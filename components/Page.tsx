@@ -1,5 +1,11 @@
 import React from "react";
-import { SafeAreaView, StyleSheet, View } from "react-native";
+import {
+  KeyboardAvoidingView,
+  Platform,
+  SafeAreaView,
+  StyleSheet,
+  View,
+} from "react-native";
 import colors from "../config/colors";
 
 interface Props {
@@ -8,9 +14,14 @@ interface Props {
 
 export default function Page({ children }: Props) {
   return (
-    <SafeAreaView style={styles.wrapper}>
-      <View style={styles.container}>{children}</View>
-    </SafeAreaView>
+    <KeyboardAvoidingView
+      behavior={Platform.OS === "ios" ? "padding" : "height"}
+      keyboardVerticalOffset={24}
+      style={styles.keyboardView}>
+      <SafeAreaView style={styles.wrapper}>
+        <View style={styles.container}>{children}</View>
+      </SafeAreaView>
+    </KeyboardAvoidingView>
   );
 }
 
@@ -20,7 +31,10 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: colors.background,
+    // backgroundColor: colors.background,
+  },
+  keyboardView: {
+    flex: 1,
   },
   container: {
     margin: 4,
