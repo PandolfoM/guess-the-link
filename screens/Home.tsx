@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
   gridCellPlay: {
     flex: 1,
     marginVertical: 4,
-    backgroundColor: colors.accentCardColor,
+    backgroundColor: colors.primaryColor,
   },
   gridCellCategories: {
     flex: 1,
