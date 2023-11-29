@@ -1,16 +1,12 @@
-import React, { useState, useEffect } from "react";
-import {
-  Alert,
-  Pressable,
-  StyleSheet,
-  Text,
-  TextInput,
-  View,
-} from "react-native";
+import React, { useState, useEffect, useRef } from "react";
+import { Pressable, StyleSheet, Text, TextInput, View } from "react-native";
 import { NavigationProps } from "../App";
 import Page from "../components/Page";
 import colors from "../config/colors";
 import BackButton from "../components/BackButton";
+import OTPTextView from "react-native-otp-textinput";
+import { Input } from "react-native-elements/dist/input/Input";
+import OTP from "../components/OTP";
 
 const testGame = [
   {
@@ -21,7 +17,7 @@ const testGame = [
     image3: "🔥",
   },
   {
-    answer: "earth layers 2",
+    answer: "earth layers",
     typeof: true,
     image1: "😀",
     image2: "✋",
@@ -38,8 +34,10 @@ const testGame = [
 
 export default function Play({ navigation }: NavigationProps) {
   const [countdown, setCountdown] = useState<number>(4);
-  const [text, onChangeText] = useState<string>("");
+  const [answer, setAnswer] = useState<string>("");
   const [currentGame, setCurrentGame] = useState<number>(0);
+  const [gameOver, setGameOver] = useState<boolean>(false);
+  const input = useRef<OTPTextView>(null);
 
   useEffect(() => {
     // Create a timer to decrement the countdown value every second
@@ -60,8 +58,20 @@ export default function Play({ navigation }: NavigationProps) {
 
   const nextGame = () => {
     if (testGame.length - 1 !== currentGame) {
-      setCurrentGame(currentGame + 1);
+      if (testGame[currentGame].answer.toLowerCase() == answer.toLowerCase()) {
+        setAnswer("");
+        setCurrentGame(currentGame + 1);
+      }
+    } else {
+      setAnswer("");
+      setGameOver(true);
     }
+  };
+
+  const handleInputChange = (text: string) => {
+    console.log(text);
+
+    // setAnswer(text);
   };
 
   return (
@@ -78,21 +88,28 @@ export default function Play({ navigation }: NavigationProps) {
           </>
         ) : (
           <>
-            <Text style={styles.emoji}>{testGame[currentGame].image1}</Text>
-            <Text style={styles.emoji}>{testGame[currentGame].image2}</Text>
-            <Text style={styles.emoji}>{testGame[currentGame].image3}</Text>
+            {gameOver ? (
+              <Text>WINNER</Text>
+            ) : (
+              <>
+                <Text style={styles.emoji}>{testGame[currentGame].image1}</Text>
+                <Text style={styles.emoji}>{testGame[currentGame].image2}</Text>
+                <Text style={styles.emoji}>{testGame[currentGame].image3}</Text>
+              </>
+            )}
           </>
         )}
       </View>
-      {countdown === 0 && (
+      {countdown === 0 && !gameOver && (
         <>
           <View style={styles.answer}>
             <Text style={styles.label}>Types of: </Text>
-            <TextInput
-              onChangeText={onChangeText}
-              value={text}
-              style={styles.input}
-            />
+            <View>
+              <OTP
+                answer={testGame[0].answer}
+                onChangeText={(otp: string) => console.log(otp)}
+              />
+            </View>
           </View>
           <Pressable onPress={nextGame} style={styles.button}>
             <Text style={styles.buttonText}>Next</Text>
@@ -122,7 +139,6 @@ const styles = StyleSheet.create({
     color: colors.white,
   },
   answer: {
-    flexDirection: "row",
     alignItems: "center",
   },
   label: {
@@ -138,15 +154,14 @@ const styles = StyleSheet.create({
     color: colors.primaryColor,
     fontWeight: "700",
   },
+  inputContainer: {
+    margin: 2,
+    width: 30,
+  },
   input: {
-    borderBottomColor: colors.white,
-    borderWidth: 2,
-    borderTopWidth: 0,
-    borderLeftWidth: 0,
-    borderRightWidth: 0,
     color: colors.primaryColor,
     fontWeight: "700",
     fontSize: 24,
-    minWidth: 120,
+    textAlign: "center",
   },
 });

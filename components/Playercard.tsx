@@ -1,11 +1,13 @@
 import { StyleSheet, View, Text } from "react-native";
-import { Avatar } from "react-native-paper";
 import colors from "../config/colors";
+import { Avatar } from "react-native-elements";
 
 export default function Playercard() {
   return (
     <View style={styles.container}>
-      <Avatar.Image
+      <Avatar
+        size={64}
+        rounded
         source={{ uri: "https://avatars.githubusercontent.com/u/32248293?v=4" }}
       />
       <View style={styles.playerInfo}>
@@ -31,6 +33,7 @@ const styles = StyleSheet.create({
     overflow: "hidden",
     flexWrap: "wrap",
     flexDirection: "row",
+    alignItems: "center",
   },
   playerInfo: {
     flex: 1,

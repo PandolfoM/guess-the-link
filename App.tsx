@@ -4,7 +4,6 @@ import { StackScreenProps } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
 import Play from "./screens/Play";
 import Home from "./screens/Home";
-import { SafeAreaProvider } from "react-native-safe-area-context";
 import colors from "./config/colors";
 
 type RootStackParamList = {
