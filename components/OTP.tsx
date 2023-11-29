@@ -1,4 +1,9 @@
-import React, { useState, MutableRefObject, useRef } from "react";
+import React, {
+  Dispatch,
+  SetStateAction,
+  MutableRefObject,
+  useRef,
+} from "react";
 import {
   View,
   TextInput,
@@ -10,14 +15,14 @@ import colors from "../config/colors";
 
 interface Props {
   answer: string;
-  onChangeText: (otp: string) => void;
+  answerState: string;
+  setAnswer: Dispatch<SetStateAction<string>>;
 }
 
-export default function OTP({ answer, onChangeText }: Props) {
+export default function OTP({ answer, answerState, setAnswer }: Props) {
   // Remove spaces from the answer string
   const cleanedAnswer = answer.replace(/\s/g, "");
 
-  const [otp, setOtp] = useState("");
   // const inputRefs = useRef([]);
   const inputRefs = useRef<Array<MutableRefObject<TextInput | null>>>(
     Array(cleanedAnswer.length)
@@ -71,10 +76,11 @@ export default function OTP({ answer, onChangeText }: Props) {
       }
 
       // Construct the new OTP string by replacing the character at the current index
-      const newOtp = otp.substring(0, index) + text + otp.substring(index + 1);
-      setOtp(newOtp);
-
-      onChangeText(newOtp);
+      const newOtp =
+        answerState.substring(0, index) +
+        text +
+        answerState.substring(index + 1);
+      setAnswer(newOtp);
     }
   };
 
@@ -111,7 +117,7 @@ export default function OTP({ answer, onChangeText }: Props) {
             onChangeText={(text) => handleInputChange(text, i)}
             onKeyPress={(event) => handleKeyPress(event, i)}
             maxLength={1}
-            value={otp.charAt(i)}
+            value={answerState.charAt(i)}
             editable={true}
           />
         </View>

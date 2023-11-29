@@ -1,11 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Pressable, StyleSheet, Text, TextInput, View } from "react-native";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 import { NavigationProps } from "../App";
 import Page from "../components/Page";
 import colors from "../config/colors";
 import BackButton from "../components/BackButton";
-import OTPTextView from "react-native-otp-textinput";
-import { Input } from "react-native-elements/dist/input/Input";
 import OTP from "../components/OTP";
 
 const testGame = [
@@ -37,7 +35,6 @@ export default function Play({ navigation }: NavigationProps) {
   const [answer, setAnswer] = useState<string>("");
   const [currentGame, setCurrentGame] = useState<number>(0);
   const [gameOver, setGameOver] = useState<boolean>(false);
-  const input = useRef<OTPTextView>(null);
 
   useEffect(() => {
     // Create a timer to decrement the countdown value every second
@@ -58,7 +55,10 @@ export default function Play({ navigation }: NavigationProps) {
 
   const nextGame = () => {
     if (testGame.length - 1 !== currentGame) {
-      if (testGame[currentGame].answer.toLowerCase() == answer.toLowerCase()) {
+      if (
+        testGame[currentGame].answer.replace(/\s/g, "").toLowerCase() ===
+        answer.toLowerCase()
+      ) {
         setAnswer("");
         setCurrentGame(currentGame + 1);
       }
@@ -66,12 +66,6 @@ export default function Play({ navigation }: NavigationProps) {
       setAnswer("");
       setGameOver(true);
     }
-  };
-
-  const handleInputChange = (text: string) => {
-    console.log(text);
-
-    // setAnswer(text);
   };
 
   return (
@@ -107,7 +101,8 @@ export default function Play({ navigation }: NavigationProps) {
             <View>
               <OTP
                 answer={testGame[0].answer}
-                onChangeText={(otp: string) => console.log(otp)}
+                answerState={answer}
+                setAnswer={setAnswer}
               />
             </View>
           </View>
