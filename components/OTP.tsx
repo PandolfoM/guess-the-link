@@ -133,6 +133,8 @@ export default function OTP({ answer, answerState, setAnswer }: Props) {
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "center",
   },
   mr: {
     marginRight: 30,

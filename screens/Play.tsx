@@ -53,6 +53,10 @@ export default function Play({ navigation }: NavigationProps) {
     };
   }, [countdown, navigation]);
 
+  useEffect(() => {
+    console.log(answer);
+  }, [answer]);
+
   const nextGame = () => {
     if (testGame.length - 1 !== currentGame) {
       if (
@@ -100,7 +104,7 @@ export default function Play({ navigation }: NavigationProps) {
             <Text style={styles.label}>Types of: </Text>
             <View>
               <OTP
-                answer={testGame[0].answer}
+                answer={testGame[currentGame].answer}
                 answerState={answer}
                 setAnswer={setAnswer}
               />
