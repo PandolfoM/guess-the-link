@@ -53,10 +53,6 @@ export default function Play({ navigation }: NavigationProps) {
     };
   }, [countdown, navigation]);
 
-  useEffect(() => {
-    console.log(answer);
-  }, [answer]);
-
   const nextGame = () => {
     if (testGame.length - 1 !== currentGame) {
       if (
