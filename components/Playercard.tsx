@@ -1,6 +1,6 @@
 import { StyleSheet, View, Text } from "react-native";
 import colors from "../config/colors";
-import { Avatar } from "react-native-elements";
+import { Avatar } from "@rneui/base";
 
 export default function Playercard() {
   return (
