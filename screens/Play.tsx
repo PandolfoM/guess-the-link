@@ -70,7 +70,12 @@ export default function Play({ navigation }: NavigationProps) {
 
   return (
     <Page>
-      {countdown === 0 && <BackButton text="Quit" />}
+      {countdown === 0 && (
+        <BackButton
+          text="Quit"
+          onPress={() => navigation.navigate("Modal", { type: "warn" })}
+        />
+      )}
       <View style={styles.container}>
         {countdown > 0 ? (
           <>

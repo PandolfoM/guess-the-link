@@ -5,6 +5,7 @@ import { useNavigation } from "@react-navigation/native";
 
 interface Props {
   text?: string;
+  onPress?: () => void;
 }
 
 function BackButton(props: Props) {
@@ -12,7 +13,7 @@ function BackButton(props: Props) {
 
   return (
     <TouchableOpacity
-      onPress={() => navigation.goBack()}
+      onPress={!props.onPress ? () => navigation.goBack() : props.onPress}
       style={styles.backBtnContainer}>
       <Text style={styles.backBtn}>{props.text ? props.text : "Back"}</Text>
     </TouchableOpacity>
