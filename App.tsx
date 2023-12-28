@@ -10,7 +10,7 @@ import Modal from "./components/Modal";
 export type RootStackParamList = {
   Home: undefined;
   Play: undefined;
-  Modal: { type?: "error" | "warn" };
+  Modal: { type?: "error" | "confirm" };
 };
 
 export type NavigationProps = StackScreenProps<RootStackParamList>;

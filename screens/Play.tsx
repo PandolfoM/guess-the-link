@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 import { NavigationProps } from "../App";
 import Page from "../components/Page";
@@ -73,7 +73,7 @@ export default function Play({ navigation }: NavigationProps) {
       {countdown === 0 && (
         <BackButton
           text="Quit"
-          onPress={() => navigation.navigate("Modal", { type: "warn" })}
+          onPress={() => navigation.navigate("Modal", { type: "confirm" })}
         />
       )}
       <View style={styles.container}>

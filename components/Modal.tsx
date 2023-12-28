@@ -21,27 +21,43 @@ const Modal: React.FC<ModalScreenRouteProp> = ({
         flex: 1,
         alignItems: "center",
         justifyContent: "center",
+        backgroundColor: colors.modalColor,
       }}>
-      <Text style={{ color: colors.white }}>This is a modal! {type}</Text>
+      {type === "confirm" && (
+        <>
+          <Text style={{ color: colors.white, fontSize: 24 }}>
+            Are you sure you would like to quit?
+          </Text>
+          <Text
+            style={{
+              color: colors.error,
+              fontSize: 24,
+              marginBottom: 24,
+            }}>
+            Your progress will not be saved!
+          </Text>
+        </>
+      )}
       <View
         style={{
           flexDirection: "row",
           gap: 12,
-          // width: "100%",
           justifyContent: "center",
         }}>
         <Button
           onPress={() => navigation.goBack()}
           title="Close"
-          type="solid"
+          type="outline"
           size="lg"
+          titleStyle={{ fontWeight: "700" }}
           style={{ width: 125 }}
         />
         <Button
-          onPress={() => navigation.goBack()}
+          onPress={() => navigation.navigate("Home")}
           title="Confirm"
           type="solid"
           size="lg"
+          titleStyle={{ fontWeight: "700", color: colors.background }}
           style={{ width: 125 }}
         />
       </View>
